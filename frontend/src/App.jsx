@@ -8,7 +8,8 @@ import GameHistory from './components/GameHistory'
 import PlayerLogin from './components/PlayerLogin'
 import './App.css'
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://crypto-crash-game-h8w6.onrender.com'
+// Production API URL - hardcoded for Netlify deployment
+const API_BASE_URL = 'https://crypto-crash-game-h8w6.onrender.com'
 
 console.log('Frontend Environment:', {
   VITE_API_URL: import.meta.env.VITE_API_URL,
