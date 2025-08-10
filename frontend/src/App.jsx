@@ -8,7 +8,13 @@ import GameHistory from './components/GameHistory'
 import PlayerLogin from './components/PlayerLogin'
 import './App.css'
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000'
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://crypto-crash-game-h8w6.onrender.com'
+
+console.log('Frontend Environment:', {
+  VITE_API_URL: import.meta.env.VITE_API_URL,
+  API_BASE_URL: API_BASE_URL,
+  NODE_ENV: import.meta.env.NODE_ENV
+})
 
 function App() {
   const [socket, setSocket] = useState(null)
