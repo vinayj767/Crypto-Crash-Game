@@ -1,0 +1,23 @@
+# Server Configuration
+PORT=3000
+NODE_ENV=production
+
+# Database Configuration (Using MongoDB Atlas for easier deployment)
+MONGODB_URI=mongodb+srv://vinayjcursor1:vinayjain@cluster0.yveaukn.mongodb.net/crypto-crash-game?retryWrites=true&w=majority&appName=Cluster0
+
+# JWT Secret
+JWT_SECRET=crypto-crash-game-jwt-secret-production-2024
+
+# API Keys
+COINGECKO_API_KEY=
+
+# CORS Origins (comma separated)
+CORS_ORIGINS=http://localhost:3000,http://localhost:5173,https://crypto-crash-game-frontend.netlify.app,https://crypto-crash-game-frontend.vercel.app
+
+# Game Configuration
+GAME_ROUND_DURATION=10000
+MULTIPLIER_UPDATE_INTERVAL=100
+
+# Security
+RATE_LIMIT_WINDOW_MS=900000
+RATE_LIMIT_MAX_REQUESTS=100

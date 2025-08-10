@@ -1,0 +1,212 @@
+.player-wallet {
+  background: #2a2a2a;
+  border-radius: 12px;
+  padding: 20px;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.wallet-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #444;
+}
+
+.wallet-header h3 {
+  margin: 0;
+  color: #fff;
+}
+
+.total-value {
+  font-size: 18px;
+  font-weight: bold;
+  color: #00ff88;
+  font-family: monospace;
+}
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  color: #999;
+}
+
+.wallet-balances {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.balance-card {
+  background: #333;
+  border-radius: 8px;
+  padding: 15px;
+  border: 1px solid #444;
+  transition: border-color 0.2s;
+}
+
+.balance-card:hover {
+  border-color: #666;
+}
+
+.balance-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.crypto-icon {
+  font-size: 20px;
+  font-weight: bold;
+  width: 24px;
+  text-align: center;
+}
+
+.crypto-icon.btc {
+  color: #f7931a;
+}
+
+.crypto-icon.eth {
+  color: #627eea;
+}
+
+.crypto-name {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.balance-amount {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.crypto-amount {
+  font-family: monospace;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.usd-amount {
+  font-family: monospace;
+  font-size: 14px;
+  color: #00ff88;
+}
+
+.balance-details {
+  text-align: right;
+}
+
+.current-price {
+  font-size: 12px;
+  color: #999;
+  font-family: monospace;
+}
+
+.wallet-stats {
+  margin-bottom: 20px;
+}
+
+.wallet-stats h4 {
+  margin: 0 0 15px 0;
+  color: #fff;
+  font-size: 16px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background: #333;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.stat-label {
+  color: #ccc;
+}
+
+.stat-value {
+  font-weight: bold;
+  font-family: monospace;
+}
+
+.stat-value.wins {
+  color: #00ff88;
+}
+
+.stat-value.losses {
+  color: #ff6b7a;
+}
+
+.stat-value.biggest-win {
+  color: #ffa502;
+}
+
+.player-info {
+  padding-top: 15px;
+  border-top: 1px solid #444;
+  font-size: 12px;
+  color: #999;
+}
+
+.player-info > div {
+  margin-bottom: 5px;
+}
+
+.player-id {
+  font-family: monospace;
+  color: #ccc;
+}
+
+.last-active {
+  color: #999;
+}
+
+.online-status.online {
+  color: #00ff88;
+}
+
+.online-status.offline {
+  color: #ff6b7a;
+}
+
+@media (max-width: 768px) {
+  .player-wallet {
+    padding: 15px;
+  }
+  
+  .wallet-header {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .balance-amount {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+  
+  .balance-details {
+    text-align: left;
+  }
+}
+

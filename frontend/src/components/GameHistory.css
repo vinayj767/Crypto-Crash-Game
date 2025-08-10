@@ -1,0 +1,265 @@
+.game-history {
+  background: #2a2a2a;
+  border-radius: 12px;
+  padding: 20px;
+  color: white;
+  height: fit-content;
+}
+
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #444;
+}
+
+.history-header h3 {
+  margin: 0;
+  color: #fff;
+  font-size: 16px;
+}
+
+.header-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.toggle-button,
+.refresh-button {
+  background: #333;
+  color: white;
+  border: 1px solid #444;
+  border-radius: 6px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.toggle-button:hover,
+.refresh-button:hover {
+  background: #444;
+  border-color: #555;
+}
+
+.no-history {
+  text-align: center;
+  padding: 40px;
+  color: #999;
+}
+
+.history-content {
+  margin-bottom: 15px;
+}
+
+.detailed-history {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.round-card {
+  background: #333;
+  border-radius: 8px;
+  padding: 12px;
+  border: 1px solid #444;
+}
+
+.round-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.round-id {
+  font-family: monospace;
+  font-weight: bold;
+  color: #ccc;
+}
+
+.round-time {
+  font-size: 12px;
+  color: #999;
+}
+
+.round-crash {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.crash-multiplier {
+  font-size: 18px;
+  font-weight: bold;
+  font-family: monospace;
+}
+
+.round-stats {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.stat-label {
+  color: #999;
+}
+
+.stat-value {
+  color: #fff;
+  font-family: monospace;
+}
+
+.compact-history {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.crash-points-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.crash-point-item {
+  background: #333;
+  border-radius: 6px;
+  padding: 8px 4px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+  font-family: monospace;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 1px solid #444;
+}
+
+.crash-point-item:hover {
+  background: #444;
+  transform: scale(1.05);
+}
+
+.history-summary {
+  background: #333;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.summary-stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.summary-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.summary-label {
+  font-size: 11px;
+  color: #999;
+}
+
+.summary-value {
+  font-size: 14px;
+  font-weight: bold;
+  font-family: monospace;
+  color: #fff;
+}
+
+.summary-value.highest {
+  color: #ffa502;
+}
+
+.summary-value.lowest {
+  color: #ff6b7a;
+}
+
+.history-footer {
+  padding-top: 15px;
+  border-top: 1px solid #444;
+}
+
+.legend {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #999;
+}
+
+.legend-color {
+  font-size: 14px;
+}
+
+/* Custom scrollbar for detailed history */
+.detailed-history::-webkit-scrollbar {
+  width: 6px;
+}
+
+.detailed-history::-webkit-scrollbar-track {
+  background: #333;
+  border-radius: 3px;
+}
+
+.detailed-history::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 3px;
+}
+
+.detailed-history::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
+
+@media (max-width: 768px) {
+  .game-history {
+    padding: 15px;
+  }
+  
+  .crash-points-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .summary-stats {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .legend {
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+  }
+  
+  .round-stats {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .stat {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+

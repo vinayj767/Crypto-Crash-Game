@@ -1,0 +1,158 @@
+.game-board {
+  background: #1a1a1a;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 2px solid #333;
+}
+
+.game-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #333;
+}
+
+.game-status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.status-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+.status-indicator.active {
+  background: #00ff88;
+}
+
+.status-indicator.crashed {
+  background: #ff4757;
+}
+
+.status-indicator.waiting {
+  background: #ffa502;
+}
+
+.status-indicator.connecting {
+  background: #666;
+}
+
+.status-text {
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.crypto-prices {
+  display: flex;
+  gap: 20px;
+}
+
+.crypto-price {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: #2a2a2a;
+  border-radius: 8px;
+}
+
+.crypto-symbol {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.crypto-symbol:first-child {
+  color: #f7931a; /* Bitcoin orange */
+}
+
+.crypto-price:last-child .crypto-symbol {
+  color: #627eea; /* Ethereum blue */
+}
+
+.price {
+  color: #fff;
+  font-family: monospace;
+  font-size: 14px;
+}
+
+.multiplier-display {
+  position: relative;
+  background: #111;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.game-canvas {
+  width: 100%;
+  height: 400px;
+  display: block;
+  background: linear-gradient(180deg, #111 0%, #1a1a1a 100%);
+}
+
+.game-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.round-info {
+  display: flex;
+  gap: 20px;
+  color: #999;
+  font-size: 12px;
+  font-family: monospace;
+}
+
+.round-info span {
+  padding: 4px 8px;
+  background: #2a2a2a;
+  border-radius: 4px;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .game-board {
+    padding: 15px;
+  }
+  
+  .game-header {
+    flex-direction: column;
+    gap: 15px;
+    align-items: stretch;
+  }
+  
+  .crypto-prices {
+    justify-content: center;
+  }
+  
+  .game-canvas {
+    height: 300px;
+  }
+  
+  .round-info {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+}
+

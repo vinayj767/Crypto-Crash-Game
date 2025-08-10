@@ -1,0 +1,252 @@
+{
+  "info": {
+    "name": "Crypto Crash Game API",
+    "description": "Complete API collection for the Crypto Crash Game backend",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "version": "1.0.0"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000",
+      "description": "Base URL for the API"
+    },
+    {
+      "key": "playerId",
+      "value": "alice_crypto",
+      "description": "Sample player ID for testing"
+    }
+  ],
+  "item": [
+    {
+      "name": "Health & Info",
+      "item": [
+        {
+          "name": "Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/health",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "health"]
+            }
+          }
+        },
+        {
+          "name": "Ping",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/ping",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "ping"]
+            }
+          }
+        },
+        {
+          "name": "API Info",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/info",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "info"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Game",
+      "item": [
+        {
+          "name": "Get Game State",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/game/state",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "game", "state"]
+            }
+          }
+        },
+        {
+          "name": "Get Crypto Prices",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/game/prices",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "game", "prices"]
+            }
+          }
+        },
+        {
+          "name": "Get Round History",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/game/history?limit=10",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "game", "history"],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "10"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Place Bet",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"playerId\": \"{{playerId}}\",\n  \"betAmountUsd\": 5.00,\n  \"currency\": \"BTC\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/game/bet",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "game", "bet"]
+            }
+          }
+        },
+        {
+          "name": "Cash Out",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"playerId\": \"{{playerId}}\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/game/cashout",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "game", "cashout"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Players",
+      "item": [
+        {
+          "name": "Create Player",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"playerId\": \"test_player\",\n  \"name\": \"Test Player\",\n  \"initialBtcBalance\": 0.001,\n  \"initialEthBalance\": 0.1\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/player",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "player"]
+            }
+          }
+        },
+        {
+          "name": "Get Player Wallet",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/player/{{playerId}}/wallet",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "player", "{{playerId}}", "wallet"]
+            }
+          }
+        },
+        {
+          "name": "Get Player History",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/player/{{playerId}}/history?limit=20",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "player", "{{playerId}}", "history"],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "20"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Update Player Status",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"isOnline\": true\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/player/{{playerId}}/status",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "player", "{{playerId}}", "status"]
+            }
+          }
+        },
+        {
+          "name": "Get All Players",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/player?limit=20&offset=0",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "player"],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "20"
+                },
+                {
+                  "key": "offset",
+                  "value": "0"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
+
