@@ -7,16 +7,16 @@ import BettingPanel from './components/BettingPanel'
 import GameHistory from './components/GameHistory'
 import PlayerLogin from './components/PlayerLogin'
 import './App.css'
-import { CONFIG } from './config.js'
 
-// PRODUCTION BUILD - API URL FROM SIMPLE CONFIG
-const API_BASE_URL = CONFIG.API_BASE_URL
+// PRODUCTION BUILD - HARDCODED API URL
+const API_BASE_URL = 'https://crypto-crash-game-h8w6.onrender.com'
 
 // Force production mode
-console.log('🚀 PRODUCTION BUILD LOADED')
+console.log('🚀 PRODUCTION BUILD LOADED - HARDCODED')
 console.log('🔗 Backend URL:', API_BASE_URL)
-console.log('🌐 Environment:', CONFIG.NODE_ENV)
-console.log('📱 Build Time:', CONFIG.BUILD_TIME)
+console.log('🌐 Environment: production')
+console.log('📱 Build Time:', new Date().toISOString())
+console.log('⚠️ This is the PRODUCTION version with hardcoded backend URL')
 
 function App() {
   const [socket, setSocket] = useState(null)
@@ -35,7 +35,7 @@ function App() {
     })
 
     newSocket.on('connect', () => {
-      console.log('Connected to server')
+      console.log('✅ Connected to PRODUCTION backend:', API_BASE_URL)
       if (player) {
         newSocket.emit('join_game', { playerId: player.playerId })
       }
