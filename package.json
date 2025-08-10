@@ -1,0 +1,25 @@
+{
+  "name": "crypto-crash-game",
+  "version": "1.0.0",
+  "description": "A real-time multiplayer crypto crash game",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "cd backend && npm start",
+    "dev": "cd backend && npm run dev",
+    "install-backend": "cd backend && npm install",
+    "install-frontend": "cd frontend && npm install",
+    "install-all": "npm run install-backend && npm run install-frontend",
+    "build-frontend": "cd frontend && npm run build",
+    "seed": "cd backend && npm run seed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vinayj767/Crypto-Crash-Game.git"
+  },
+  "keywords": ["crypto", "crash-game", "websocket", "gambling", "real-time"],
+  "author": "Vinay",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
