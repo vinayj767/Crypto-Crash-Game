@@ -1,8 +1,8 @@
 # Frontend Environment Variables
 
-# Backend API URL (Development)
-VITE_API_URL=http://localhost:3000
+# Backend API URL (Production)
+VITE_API_URL=https://crypto-crash-game-h8w6.onrender.com
 
-# Backend API URL (Production) - Update this with your Render URL
-# VITE_API_URL=https://crypto-crash-game-backend.onrender.com
+# Backend API URL (Development)
+# VITE_API_URL=http://localhost:3000
 
