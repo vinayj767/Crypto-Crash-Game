@@ -7,15 +7,17 @@ import BettingPanel from './components/BettingPanel'
 import GameHistory from './components/GameHistory'
 import PlayerLogin from './components/PlayerLogin'
 import './App.css'
+import { PRODUCTION_CONFIG } from '../production.config.js'
 
-// Production API URL - hardcoded for Netlify deployment
-const API_BASE_URL = 'https://crypto-crash-game-h8w6.onrender.com'
+// PRODUCTION BUILD - API URL FROM CONFIG
+const API_BASE_URL = PRODUCTION_CONFIG.API_BASE_URL
 
-console.log('Frontend Environment:', {
-  VITE_API_URL: import.meta.env.VITE_API_URL,
-  API_BASE_URL: API_BASE_URL,
-  NODE_ENV: import.meta.env.NODE_ENV
-})
+// Force production mode
+console.log('🚀 PRODUCTION BUILD LOADED')
+console.log('🔗 Backend URL:', API_BASE_URL)
+console.log('🌐 Environment:', PRODUCTION_CONFIG.NODE_ENV)
+console.log('📱 Build Time:', PRODUCTION_CONFIG.BUILD_TIME)
+console.log('📦 Version:', PRODUCTION_CONFIG.VERSION)
 
 function App() {
   const [socket, setSocket] = useState(null)
